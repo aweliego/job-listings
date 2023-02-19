@@ -3,6 +3,10 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'header-desktop': "url('/src/assets/images/bg-header-desktop.svg')",
+        'header-mobile': "url('/src/assets/images/bg-header-mobile.svg')",
+      },
       colors: {
         cyan: {
           primary: 'hsl(180, 29%, 50%)',
@@ -12,11 +16,14 @@ module.exports = {
           'very-dark': 'hsl(180, 14%, 20%)',
         },
       },
+      fontFamily: {
+        body: ['League Spartan'],
+      },
       fontSize: {
         base: '0.9375rem',
       },
-      fontFamily: {
-        body: ['League Spartan'],
+      screens: {
+        sm: '376px',
       },
     },
   },
