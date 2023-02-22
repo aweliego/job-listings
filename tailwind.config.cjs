@@ -10,11 +10,14 @@ module.exports = {
       colors: {
         cyan: {
           primary: 'hsl(180, 29%, 50%)',
-          'bg-color': 'hsl(180, 52%, 96%)',
+          'bg-color': 'hsl(180, 31%, 95%)',
           'filter-color': 'hsl(180, 31%, 95%)',
           dark: 'hsl(180, 8%, 52%)',
           'very-dark': 'hsl(180, 14%, 20%)',
         },
+      },
+      dropShadow: {
+        lg: '0 10px 8px hsla(180, 29%, 50%, 0.2)',
       },
       fontFamily: {
         body: ['League Spartan'],
