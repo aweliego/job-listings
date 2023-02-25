@@ -6,8 +6,10 @@ const App = () => {
   return (
     <>
       <div className='bg-header-mobile sm:bg-header-desktop bg-no-repeat bg-cyan-primary h-36 w-full'></div>
-      <SearchBar />
-      <Listing />
+      <section className='flex flex-col justify-center items-center'>
+        <SearchBar />
+        <Listing />
+      </section>
     </>
   )
 }

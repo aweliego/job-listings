@@ -1,5 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .badge {
+    @apply h-5 uppercase text-white rounded-xl px-2 py-1;
+  }
+
+  .filter {
+    @apply font-semibold text-cyan-primary hover:text-white bg-cyan-filter-color hover:bg-cyan-primary mx-1 px-2 py-1 rounded;
+  }
+}
