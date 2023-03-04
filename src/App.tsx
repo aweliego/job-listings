@@ -10,6 +10,9 @@ const App = () => {
       <section className='flex flex-col justify-center items-center'>
         <SearchBar />
         {data.map((listing) => {
+
+          const filters = [listing.role, listing.level, ...listing.languages, ...listing.tools]
+
           return (<Listing
             key={listing.id}
             company={listing.company}
@@ -17,13 +20,10 @@ const App = () => {
             newListing={listing.new}
             featured={listing.featured}
             position={listing.position}
-            role={listing.role}
-            level={listing.level}
             postedAt={listing.postedAt}
             contract={listing.contract}
             location={listing.location}
-            languages={listing.languages}
-            tools={listing.tools}
+            filters={filters}
           />)
         })}
       </section>
