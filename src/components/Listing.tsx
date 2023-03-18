@@ -7,10 +7,13 @@ type ListingProps = {
     newListing: boolean
     featured: boolean
     position: string
+    role: string
+    level: string
     postedAt: string
     contract: string
     location: string
-    filters: string[]
+    languages: string[]
+    tools: string[]
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -20,10 +23,13 @@ const Listing: React.FC<ListingProps> = ({
     newListing,
     featured,
     position,
+    role,
+    level,
     postedAt,
     contract,
     location,
-    filters
+    languages,
+    tools
 }) => {
 
     return (
@@ -58,7 +64,7 @@ const Listing: React.FC<ListingProps> = ({
 
             {/* Filters */}
             <div className='flex flex-wrap gap-2 '>
-                {filters.map((filter) => <button className='filter'>{filter}</button>)}
+                {[role, level, ...languages, ...tools].map((filter) => <button className='filter'>{filter}</button>)}
             </div>
         </article >)
 }
