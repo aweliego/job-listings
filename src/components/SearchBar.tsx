@@ -1,7 +1,7 @@
 import React from 'react'
 
-const SearchBar = () => {
-    const [value, setValue] = React.useState<string>()
+const SearchBar: React.FC = () => {
+    const [value, setValue] = React.useState<string>('')
 
     const autoResize = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const textarea = e.target as HTMLTextAreaElement
@@ -10,12 +10,12 @@ const SearchBar = () => {
         textarea.style.height = scrollHeight + 'px'
     }
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setValue(e.currentTarget.value)
     }
 
-    const handleSubmit = (e: any) => {
-        if (e.keyCode == 13 && e.shiftKey == false) {
+    const handleSubmit = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key == 'Enter' && e.shiftKey == false) {
             e.preventDefault()
         }
     }
