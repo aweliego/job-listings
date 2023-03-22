@@ -10,7 +10,7 @@ const App = () => {
     <>
       <div className='bg-header-mobile sm:bg-header-desktop bg-no-repeat bg-cyan-primary h-36 w-full'></div>
       <section className='flex flex-col justify-center items-center'>
-        <SearchBar filters={filters} />
+        {filters.length > 0 && <SearchBar filters={filters} setFilters={setFilters} />}
         {data.map((listing) => (<Listing
           key={listing.id}
           company={listing.company}
