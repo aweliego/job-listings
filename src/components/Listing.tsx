@@ -1,5 +1,3 @@
-// import '../assets/images/photosnap.svg'
-
 type ListingProps = {
     key: number
     company: string
@@ -14,6 +12,8 @@ type ListingProps = {
     location: string
     languages: string[]
     tools: string[]
+    filters: string[]
+    setFilters: React.Dispatch<React.SetStateAction<string[]>>
 }
 
 const Listing: React.FC<ListingProps> = ({
@@ -29,8 +29,16 @@ const Listing: React.FC<ListingProps> = ({
     contract,
     location,
     languages,
-    tools
+    tools,
+    filters,
+    setFilters
 }) => {
+
+    const addFilters = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        const filter = e.currentTarget.innerHTML
+        if (!filters.includes(filter)) setFilters((prevFilters) => [filter, ...prevFilters])
+        return
+    }
 
     return (
         <article className='flex flex-wrap sm:flex-row sm:justify-between sm:items-center w-11/12 sm:w-4/5 mx-auto mt-4 mb-9 md:mb-2 p-4 bg-white rounded drop-shadow-lg border-l-4 border-l-cyan-primary cursor-pointer'>
@@ -64,7 +72,7 @@ const Listing: React.FC<ListingProps> = ({
 
             {/* Filters */}
             <div className='flex flex-wrap gap-2 '>
-                {[role, level, ...languages, ...tools].map((filter) => <button className='filter'>{filter}</button>)}
+                {[role, level, ...languages, ...tools].map((filter) => <button onClick={(e) => addFilters(e)} className='filter'>{filter}</button>)}
             </div>
         </article >)
 }
