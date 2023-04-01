@@ -36,7 +36,7 @@ const Listing: React.FC<ListingProps> = ({
 
     const addFilters = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         const filter = e.currentTarget.innerHTML
-        if (!filters.includes(filter)) setFilters((prevFilters) => [filter, ...prevFilters])
+        if (!filters.includes(filter)) setFilters((prevFilters) => [...prevFilters, filter])
         return
     }
 
@@ -72,7 +72,7 @@ const Listing: React.FC<ListingProps> = ({
 
             {/* Filters */}
             <div className='flex flex-wrap gap-2 '>
-                {[role, level, ...languages, ...tools].map((filter) => <button onClick={(e) => addFilters(e)} className='filter'>{filter}</button>)}
+                {[role, level, ...languages, ...tools].map((filter) => <button onClick={(e) => addFilters(e)} className='filter hover:text-white hover:bg-cyan-primary '>{filter}</button>)}
             </div>
         </article >)
 }
