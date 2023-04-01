@@ -9,12 +9,13 @@ type SearchBarProps = {
 const SearchBar: React.FC<SearchBarProps> = ({ filters, setFilters }) => {
 
     return (
-        <div className='-translate-y-7 relative w-11/12 sm:w-4/5 mx-auto block'>
-            <div className='flex flex-wrap gap-y-3 rounded drop-shadow-lg outline-none p-4 bg-white'>
+        <div className='grid grid-cols-8 -translate-y-7 w-11/12 sm:w-4/5 mx-auto drop-shadow-lg'>
+            <div className='col-span-6 md:col-span-7 xs:col-span-6 flex flex-wrap gap-y-3 rounded-l-sm p-4 md:pl-8 bg-white'>
                 {filters.map(filter => <FilterTag title={filter} />)}
             </div>
-            <button type='button' onClick={() => setFilters([])} className='absolute top-5 right-5 text-cyan-dark hover:text-cyan-primary hover:underline'>Clear</button>
-        </div >
+            <button type='button' onClick={() => setFilters([])}
+                className='col-span-2 md:col-span-1 text-cyan-dark hover:text-cyan-primary hover:underline font-semibold rounded-r-sm bg-white '>Clear</button>
+        </div>
     )
 }
 

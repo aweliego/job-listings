@@ -10,6 +10,6 @@
   }
 
   .filter {
-    @apply font-semibold text-cyan-primary hover:text-white bg-cyan-filter-color hover:bg-cyan-primary mx-1 px-2 py-1 rounded;
+    @apply font-semibold text-cyan-primary bg-cyan-filter-color mx-1 px-2 py-1 rounded;
   }
 }
