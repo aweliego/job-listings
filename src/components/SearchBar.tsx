@@ -1,9 +1,10 @@
 import React from 'react'
 import FilterTag from './FilterTag'
+import { FilterTagType } from '../App'
 
 type SearchBarProps = {
-    filters: string[]
-    setFilters: React.Dispatch<React.SetStateAction<string[]>>
+    filters: FilterTagType[]
+    setFilters: React.Dispatch<React.SetStateAction<FilterTagType[]>>
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ filters, setFilters }) => {
@@ -11,7 +12,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ filters, setFilters }) => {
     return (
         <div className='grid grid-cols-8 -translate-y-7 w-11/12 sm:w-4/5 mx-auto drop-shadow-lg'>
             <div className='col-span-6 md:col-span-7 xs:col-span-6 flex flex-wrap gap-y-3 rounded-l-sm p-4 md:pl-8 bg-white'>
-                {filters.map(filter => <FilterTag title={filter} />)}
+                {filters.map(filter => <FilterTag id={filter.id} title={filter.title} setFilters={setFilters} />)}
+
             </div>
             <button type='button' onClick={() => setFilters([])}
                 className='col-span-2 md:col-span-1 text-cyan-dark hover:text-cyan-primary hover:underline font-semibold rounded-r-sm bg-white '>Clear</button>

@@ -1,10 +1,15 @@
 import React from 'react'
 import Listing from './components/Listing'
 import SearchBar from './components/SearchBar'
-import data from './data.json'
+import { data } from './data'
+
+export type FilterTagType = {
+  id: number
+  title: string
+}
 
 const App = () => {
-  const [filters, setFilters] = React.useState<string[]>([])
+  const [filters, setFilters] = React.useState<FilterTagType[]>([])
 
   return (
     <>
@@ -12,7 +17,7 @@ const App = () => {
       <section className='flex flex-col justify-center items-center'>
         {filters.length > 0 && <SearchBar filters={filters} setFilters={setFilters} />}
         {data.map((listing) => (<Listing
-          key={listing.id}
+          id={listing.id}
           company={listing.company}
           logo={listing.logo}
           newListing={listing.new}
