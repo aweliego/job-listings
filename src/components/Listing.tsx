@@ -1,4 +1,3 @@
-import { FilterTagType } from '../App'
 import FilterButton from './FilterButton'
 
 type ListingProps = {
@@ -15,12 +14,10 @@ type ListingProps = {
     location: string
     languages: string[]
     tools: string[]
-    filters: FilterTagType[]
-    setFilters: React.Dispatch<React.SetStateAction<FilterTagType[]>>
+    addFilters: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const Listing: React.FC<ListingProps> = ({
-    id,
     company,
     logo,
     newListing,
@@ -33,8 +30,7 @@ const Listing: React.FC<ListingProps> = ({
     location,
     languages,
     tools,
-    filters,
-    setFilters
+    addFilters
 }) => {
     return (
         <article className='flex flex-wrap sm:flex-row sm:justify-between sm:items-center w-11/12 sm:w-4/5 mx-auto mt-4 mb-9 md:mb-2 p-4 bg-white rounded drop-shadow-lg border-l-4 border-l-cyan-primary cursor-pointer'>
@@ -68,7 +64,7 @@ const Listing: React.FC<ListingProps> = ({
 
             {/* Filters */}
             <div className='flex flex-wrap gap-2 '>
-                {[role, level, ...languages, ...tools].map((filter) => <FilterButton filter={filter} filters={filters} setFilters={setFilters} />)}
+                {[role, level, ...languages, ...tools].map((filter) => <FilterButton filter={filter} addFilters={addFilters} />)}
             </div>
         </article >)
 }

@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     id: 1,
     company: 'Photosnap',
@@ -150,3 +150,5 @@ export const data = [
     tools: ['React', 'Sass'],
   },
 ]
+
+export default data
