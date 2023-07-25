@@ -64,7 +64,7 @@ const Listing: React.FC<ListingProps> = ({
 
             {/* Filters */}
             <div className='flex flex-wrap gap-2 '>
-                {[role, level, ...languages, ...tools].map((filter) => <FilterButton filter={filter} addFilters={addFilters} />)}
+                {[role, level, ...languages, ...tools].map((filter, idx) => <FilterButton key={idx} filter={filter} addFilters={addFilters} />)}
             </div>
         </article >)
 }
