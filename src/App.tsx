@@ -8,6 +8,22 @@ export type FilterTagType = {
   title: string
 }
 
+export type Listings = {
+  id: number
+  company: string
+  logo: string
+  ['new']: boolean
+  featured: boolean
+  position: string
+  role: string
+  level: string
+  postedAt: string
+  contract: string
+  location: string
+  languages: string[]
+  tools: string[]
+}
+
 const filtersList = {
   frontend: {
     id: 1,
@@ -90,23 +106,26 @@ const App = () => {
     }
   }
 
-  const getFilteredResults = (): any[] => {
-    const results = listings.filter(listing => {
-      // check if filter.title is found in listing.role, level, languages or tools -- testing with role for now
-      const filtersTitles = filters.map((filter: any) => filter.title)
-      return filtersTitles.includes(listing.role)
+  // Filter listings based on selected filters
+  const getFilteredResults = (): Array<Listings> => {
+    const results = listings.filter((listing: any) => {
+      return filters.some(filter => {
+        const allFilters = [listing.role, listing.level, ...listing.languages, ...listing.tools]
+        return allFilters.includes(filter.title)
+      })
     })
     return filters.length === 0 ? listings : results
   }
 
-  const filteredResults = getFilteredResults()
+  const filteredListings = getFilteredResults()
 
   return (
     <>
       <div className='bg-header-mobile sm:bg-header-desktop bg-no-repeat bg-cyan-primary h-36 w-full'></div>
       <section className='flex flex-col justify-center items-center'>
         {filters.length > 0 && <SearchBar filters={filters} setFilters={setFilters} />}
-        {filteredResults.map((listing: any) => (<Listing
+        {filteredListings.map((listing: any) => (<Listing
+          key={listing.id}
           id={listing.id}
           company={listing.company}
           logo={listing.logo}
@@ -122,7 +141,8 @@ const App = () => {
           tools={listing.tools}
           addFilters={addFilters}
         />)
-        )}
+        )
+        }
       </section>
     </>
   )

@@ -1,4 +1,6 @@
-const data = [
+import { Listings } from './App'
+
+const data: Array<Listings> = [
   {
     id: 1,
     company: 'Photosnap',
