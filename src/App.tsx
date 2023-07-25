@@ -6,7 +6,7 @@ import SearchBar from './components/SearchBar'
 import listings from './data'
 import filtersList from './filters'
 // types
-import { FilterTagType, Listings } from './types'
+import { FilterTagType, ListingType } from './types'
 
 const App = () => {
   const [filters, setFilters] = React.useState<FilterTagType[]>([])
@@ -18,13 +18,13 @@ const App = () => {
     let id = filtersList[value].id
     const filter = { id, title }
 
-    if (!filters.some((filter: any) => filter.title === title)) {
+    if (!filters.some(filter => filter.title === title)) {
       setFilters((prevFilters) => [...prevFilters, filter])
     }
   }
 
   // Filter listings based on selected filters
-  const getFilteredResults = (): Array<Listings> => {
+  const getFilteredResults = (): Array<ListingType> => {
     const results = listings.filter((listing: any) => {
       return filters.some(filter => {
         const allFilters = [listing.role, listing.level, ...listing.languages, ...listing.tools]

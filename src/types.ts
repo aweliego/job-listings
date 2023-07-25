@@ -3,7 +3,7 @@ export type FilterTagType = {
   title: string
 }
 
-export type Listings = {
+export type ListingType = {
   id: number
   company: string
   logo: string
@@ -19,7 +19,7 @@ export type Listings = {
   tools: string[]
 }
 
-export type filtersListType = {
+export type FiltersListType = {
   [filter: string]: {
     id: number
     title: string

@@ -1,6 +1,6 @@
-import { filtersListType } from './types'
+import { FiltersListType } from './types'
 
-const filtersList: filtersListType = {
+const filtersList: FiltersListType = {
   frontend: {
     id: 1,
     title: 'Frontend',
