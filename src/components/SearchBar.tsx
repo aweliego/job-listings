@@ -1,6 +1,6 @@
 import React from 'react'
 import FilterTag from './FilterTag'
-import { FilterTagType } from '../App'
+import { FilterTagType } from '../types'
 
 type SearchBarProps = {
     filters: FilterTagType[]

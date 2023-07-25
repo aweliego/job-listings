@@ -1,4 +1,4 @@
-import { Listings } from './App'
+import { Listings } from './types'
 
 const data: Array<Listings> = [
   {
