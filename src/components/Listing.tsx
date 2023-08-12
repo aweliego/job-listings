@@ -33,10 +33,14 @@ const Listing: React.FC<ListingProps> = ({
     addFilters
 }) => {
     return (
-        <article className='flex flex-wrap sm:flex-row sm:justify-between sm:items-center w-11/12 sm:w-4/5 mx-auto mt-4 mb-9 md:mb-2 p-4 bg-white rounded drop-shadow-lg border-l-4 border-l-cyan-primary cursor-pointer'>
+        <article className='flex flex-wrap sm:flex-row sm:justify-between sm:items-center w-11/12 
+        sm:w-4/5 mx-auto mt-4 mb-9 md:mb-2 p-4 bg-white rounded drop-shadow-lg border-l-4 border-l-cyan-primary 
+        cursor-pointer'>
             <div className='md:flex md:flex-row md:items-center relative'>
                 {/* Company image */}
-                <img src={logo} alt='company logo' className='md:mr-6 md:ml-4 w-16 md:w-[5.5rem] absolute -translate-y-12 md:static md:-translate-y-0' />
+                <img src={logo} alt='company logo'
+                    className='md:mr-6 md:ml-4 w-16 md:w-[5.5rem] absolute -translate-y-12 md:static md:-translate-y-0'
+                />
 
                 <div className='flex flex-col gap-1'>
                     {/* Company name */}
@@ -51,10 +55,11 @@ const Listing: React.FC<ListingProps> = ({
                         {position}
                     </h4>
                     {/* Details */}
-                    <div className='flex gap-x-7 text-cyan-dark font-normal'>
-                        <span>{postedAt}</span>
-                        <span>{contract}</span>
-                        <span>{location}</span>
+                    <div className='flex gap-x-3 text-cyan-dark font-normal'>
+                        <p>{postedAt}</p><span className='font-extrabold opacity-60'>·</span>
+                        <p>{contract}</p><span className='font-extrabold opacity-60'>·</span>
+                        <p>{location}</p>
+
                     </div>
                 </div>
             </div>
@@ -64,7 +69,9 @@ const Listing: React.FC<ListingProps> = ({
 
             {/* Filters */}
             <div className='flex flex-wrap gap-2 '>
-                {[role, level, ...languages, ...tools].map((filter, idx) => <FilterButton key={idx} filter={filter} addFilters={addFilters} />)}
+                {[role, level, ...languages, ...tools].map((filter, idx) =>
+                    <FilterButton key={idx} filter={filter} addFilters={addFilters}
+                    />)}
             </div>
         </article >)
 }

@@ -9,7 +9,11 @@ const FilterButton: React.FC<FilterButtonProps> = ({ filter, addFilters }) => {
 
 
     return (
-        <button onClick={(e) => addFilters(e)} className='filter hover:text-white hover:bg-cyan-primary '>{filter}</button>
+        <button onClick={(e) => addFilters(e)}
+            className='filter hover:text-white hover:bg-cyan-primary transition ease-out delay-75 hover:scale-110'
+        >
+            {filter}
+        </button>
     )
 }
 
