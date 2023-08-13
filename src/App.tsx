@@ -7,6 +7,10 @@ import listings from './data'
 import filtersList from './filters'
 // types
 import { FilterTagType, ListingType } from './types'
+// styles
+import './styles.css'
+// transitions
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 const App = () => {
   const [filters, setFilters] = React.useState<FilterTagType[]>([])
@@ -39,28 +43,37 @@ const App = () => {
   return (
     <>
       <div className='bg-header-mobile sm:bg-header-desktop bg-no-repeat bg-cyan-primary h-36 w-full'></div>
-      <section className='flex flex-col justify-center items-center'>
-        {filters.length > 0 && <SearchBar filters={filters} setFilters={setFilters} />}
-        {filteredListings.map((listing: any) => (<Listing
-          key={listing.id}
-          id={listing.id}
-          company={listing.company}
-          logo={listing.logo}
-          newListing={listing.new}
-          featured={listing.featured}
-          position={listing.position}
-          role={listing.role}
-          level={listing.level}
-          postedAt={listing.postedAt}
-          contract={listing.contract}
-          location={listing.location}
-          languages={listing.languages}
-          tools={listing.tools}
-          addFilters={addFilters}
-        />)
+      {filters.length > 0 && <SearchBar filters={filters} setFilters={setFilters} />}
+      <TransitionGroup className='flex flex-col justify-center items-center'>
+        {filteredListings.map((listing: any) =>
+        (
+          <CSSTransition
+            key={listing.id}
+            timeout={700}
+            classNames="item"
+          >
+            <Listing
+              key={listing.id}
+              id={listing.id}
+              company={listing.company}
+              logo={listing.logo}
+              newListing={listing.new}
+              featured={listing.featured}
+              position={listing.position}
+              role={listing.role}
+              level={listing.level}
+              postedAt={listing.postedAt}
+              contract={listing.contract}
+              location={listing.location}
+              languages={listing.languages}
+              tools={listing.tools}
+              addFilters={addFilters}
+            />
+          </CSSTransition>
+        )
         )
         }
-      </section>
+      </TransitionGroup>
     </>
   )
 }
