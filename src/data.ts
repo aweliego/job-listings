@@ -1,6 +1,6 @@
-import { Listings } from './types'
+import { ListingType } from './types'
 
-const data: Array<Listings> = [
+const data: Array<ListingType> = [
   {
     id: 1,
     company: 'Photosnap',
