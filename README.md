@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution on Frontend Mentor]()
+- [Solution on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt/solutions/new)
 - [Live Site](https://job-listings-fem-challenge.netlify.app/)
 
 ### Setup
