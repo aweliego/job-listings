@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-README.md 
-README-template.md
 style-guide.md
 public/design
 # Local Netlify folder
