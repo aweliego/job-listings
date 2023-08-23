@@ -6,7 +6,7 @@
 
 @layer components {
   .badge {
-    @apply h-5 uppercase text-white rounded-xl px-2 py-1;
+    @apply h-5 uppercase font-bold text-white rounded-xl px-2 py-1;
   }
 
   .filter {

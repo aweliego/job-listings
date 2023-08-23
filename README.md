@@ -15,7 +15,6 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 
 ## Overview
@@ -117,10 +116,6 @@ const getFilteredResults = (): Array<ListingType> => {
 
 const filteredListings = getFilteredResults()
 ```
-
-### Continued development
-
-I definitely think I'll keep on using TailwindCSS in other projects, along with React Transitions.
 
 ### Useful resources
 

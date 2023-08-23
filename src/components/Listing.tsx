@@ -34,7 +34,7 @@ const Listing: React.FC<ListingProps> = ({
 }) => {
     return (
         <article className='flex flex-wrap sm:flex-row sm:justify-between sm:items-center w-11/12 
-        sm:w-4/5 mx-auto mt-4 mb-9 md:mb-2 p-4 bg-white rounded drop-shadow-lg border-l-4 border-l-cyan-primary 
+        sm:w-4/5 lg:h-36 mx-auto mt-4 mb-9 md:mb-2 p-4 bg-white rounded drop-shadow-lg border-l-4 border-l-cyan-primary 
         cursor-pointer'>
             <div className='md:flex md:flex-row md:items-center relative'>
                 {/* Company image */}
@@ -44,18 +44,18 @@ const Listing: React.FC<ListingProps> = ({
 
                 <div className='flex flex-col gap-1'>
                     {/* Company name */}
-                    <div className='flex gap-x-3 items-center leading-none mt-7 md:mt-0'>
+                    <div className='flex gap-x-3 items-center leading-none mt-7 md:mt-0 text-lg'>
                         <p className='text-cyan-primary font-medium'>{company}</p>
                         {/* Badges */}
                         {newListing && <span className='badge bg-cyan-primary'>NEW!</span>}
                         {featured && <span className='badge bg-cyan-very-dark'>FEATURED</span>}
                     </div>
                     {/* Role */}
-                    <h4 className='text-lg font-bold text-cyan-very-dark hover:text-cyan-primary'>
+                    <h4 className='text-xl font-bold text-cyan-very-dark hover:text-cyan-primary'>
                         {position}
                     </h4>
                     {/* Details */}
-                    <div className='flex gap-x-3 text-cyan-dark font-normal'>
+                    <div className='flex gap-x-3 text-cyan-dark font-normal text-lg'>
                         <p>{postedAt}</p><span className='font-extrabold opacity-60'>·</span>
                         <p>{contract}</p><span className='font-extrabold opacity-60'>·</span>
                         <p>{location}</p>

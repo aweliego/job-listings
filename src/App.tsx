@@ -42,9 +42,9 @@ const App = () => {
 
   return (
     <>
-      <div className='bg-header-mobile sm:bg-header-desktop bg-no-repeat bg-cyan-primary h-36 w-full'></div>
+      <div className='bg-header-mobile sm:bg-header-desktop bg-no-repeat bg-cover bg-cyan-primary h-40 w-full'></div>
       {filters.length > 0 && <SearchBar filters={filters} setFilters={setFilters} />}
-      <TransitionGroup className={`flex flex-col justify-center items-center ${filters.length > 0 ? 'mt-6 md:mt-0' : 'mt-14'}`} >
+      <TransitionGroup className={`flex flex-col justify-center items-center mb-24 ${filters.length > 0 ? 'mt-6 md:mt-0' : 'mt-14'}`} >
         {filteredListings.map((listing: any) =>
         (
           <CSSTransition
